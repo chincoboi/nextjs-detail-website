@@ -1,101 +1,142 @@
 import Image from "next/image";
+import micImage from "../public/14.jpg";
+import headphoneImage from "../public/16.jpg";
+import speakerImage from "../public/paul-esch-laurent-YU-OA2TvQRQ-unsplash.jpg";
+import richardImage from "../public/rich.jpg";
+import danielImage from "../public/rich1.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+    <main>
+      <div className="text-box">
+        <div className="texts">
+          <h1>PLACE OF WORSHIP</h1>
+          <p>
+            Listening to Great Sounds is different when it's Spirit-filled and
+            from the <br />
+            <strong>Arena of Worship</strong>
+          </p>
+          <a href="#" className="hero-btn">
+            Stick Around to Know More
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </div>
+
+      <section className="services">
+        <h1>Services We Offer</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        <div className="row">
+          <ServiceCard
+            title="Music Production"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta odit veniam aspernatur, nostrum dignissimos, blanditiis consequatur ea perspiciatis dolor at alias facere maxime laborum.."
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <ServiceCard
+            title="Sound Set-up"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta odit veniam aspernatur, nostrum dignissimos, blanditiis consequatur ea perspiciatis dolor at alias facere maxime laborum.."
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <ServiceCard
+            title="Music Download"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta odit veniam aspernatur, nostrum dignissimos, blanditiis consequatur ea perspiciatis dolor at alias facere maxime laborum.."
           />
-          Go to nextjs.org →
+        </div>
+      </section>
+
+      <section className="offices">
+        <h1>Our Offices</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, illo!</p>
+        <div className="row">
+          <OfficeCard city="ABUJA" imageSrc={micImage} />
+          <OfficeCard city="NEW YORK" imageSrc={headphoneImage} />
+          <OfficeCard city="MANCHESTER" imageSrc={speakerImage} />
+        </div>
+      </section>
+
+      <section className="equipments">
+        <h1>Our Equipments</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, blanditiis!</p>
+        <div className="row">
+          <EquipmentCard
+            title="Excellent Voice Microphone"
+            imageSrc={micImage}
+          />
+          <EquipmentCard
+            title="Quality Sound Headphone"
+            imageSrc={headphoneImage}
+          />
+          <EquipmentCard
+            title="Portable Sound Speaker"
+            imageSrc={speakerImage}
+          />
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <h1>What Our Client Says</h1>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <div className="row">
+          <TestimonialCard
+            name="Richard Damilola"
+            rating={4.5}
+            imageSrc={richardImage}
+          />
+          <TestimonialCard
+            name="Damilola Daniel"
+            rating={4}
+            imageSrc={danielImage}
+          />
+        </div>
+      </section>
+
+      <section className="cta">
+        <h1>
+          Enroll For Our Various Services
+          <br />
+          Anywhere From The World
+        </h1>
+        <a href="#" className="hero-btn">
+          CONTACT US
         </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }
+
+const ServiceCard = ({ title, description }) => (
+  <div className="services-col">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+
+const OfficeCard = ({ city, imageSrc }) => (
+  <div className="offices-col">
+    <Image src={imageSrc} alt={city} />
+    <div className="layer">
+      <h3>{city}</h3>
+    </div>
+  </div>
+);
+
+const EquipmentCard = ({ title, imageSrc }) => (
+  <div className="equipments-col">
+    <Image src={imageSrc} alt={title} />
+    <h3>{title}</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officia tenetur iusto rem possimus quia laudantium beatae laboriosam quibusdam ab.</p>
+  </div>
+);
+
+const TestimonialCard = ({ name, rating, imageSrc }) => (
+  <div className="testimonial-col">
+    <Image src={imageSrc} alt={name} />
+    <div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorum a fugiat nesciunt veniam, eius at? Commodi id doloremque laborum autem nobis aut mollitia quis. Eius corrupti in eos asperiores? Lorem ipsum dolor sit amet.</p>
+      <h3>{name}</h3>
+      {[...Array(Math.floor(rating))].map((_, i) => (
+        <FontAwesomeIcon key={i} className="fa" icon={faStar} />
+      ))}
+      {rating % 1 !== 0 && <FontAwesomeIcon icon={faStarHalfAlt} className="fa" />}
+    </div>
+  </div>
+);
